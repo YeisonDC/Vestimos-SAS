@@ -1,8 +1,11 @@
+import Productos from './frames/productos';
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-blue-600">
-      Hola mundo
-    </h1>
+    <div className="App">
+      <Productos />
+    </div>
   );
 }
+
 export default App;
