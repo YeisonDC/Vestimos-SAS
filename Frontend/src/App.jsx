@@ -1,35 +1,25 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import React from 'react';
+import Navbar from './componentes/navbar';
+import Principal from './frames/principal';
+import TarjetasProductos from './frames/tarjetas_productos';
+import Servicios from './frames/servicios'; // <-- Importación de los servicios
 
-import Navbar from './componentes/Navbar'; 
-import Productos from './frames/productos';
-import Historia from './frames/Historia'; 
-import Exportaciones from './frames/Exportaciones';
-import Cotizacion from './frames/Cotizacion';
-import Boton from './componentes/boton';
-
-function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800, 
-      once: false,    
-      offset: 100,   
-    });
-  }, []);
-
+export default function VestimosWeb() {
   return (
-    // Sin overflow-hidden aquí para no dañar el sticky
-    <div className="App relative bg-slate-100">
-      {/* El Navbar va de primero para que controle la navegación de toda la página */}
+    <div className="min-h-screen bg-[#050914] text-white font-sans">
+      
+      {/* 1. NAVBAR */}
       <Navbar />
-      <Productos />
-      <Historia />
-      <Exportaciones />
-      <Cotizacion />
-      <Boton />
+
+      {/* 2 Y 3. HERO Y ESTADÍSTICAS */}
+      <Principal />
+
+      {/* 4. TARJETAS DE PRODUCTOS */}
+      <TarjetasProductos />
+
+      {/* 5. FOOTER DE SERVICIOS */}
+      <Servicios />
+
     </div>
   );
 }
-
-export default App; 
