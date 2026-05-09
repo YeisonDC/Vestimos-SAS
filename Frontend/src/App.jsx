@@ -1,13 +1,13 @@
-import Banner from "./componentes/banner";
-import Hero from "./componentes/Hero";
-import Footer from "./componentes/Footer";
+import AluminioAleaciones from "./componentes/Aleaciones";
+import Ropa from "./componentes/Ropa";
+import Frutas from "./componentes/Frutas";
 
 function App() {
   return (
     <>
-      <Banner />
-      <Hero />
-      <Footer />
+      <AluminioAleaciones />
+      <Ropa />
+      <Frutas />
     </>
   );
 }
