@@ -140,7 +140,7 @@ export default function Banner_final() {
 
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-blue-500" />
-                contacto@vestimosjb.com
+                jdiaz@eg-mexicogroup.com
               </div>
 
             </div>

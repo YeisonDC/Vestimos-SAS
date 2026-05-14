@@ -14,7 +14,10 @@ export default function Exportacion() {
   ];
 
   return (
-    <section className="relative w-full bg-[#050914] overflow-hidden py-20 font-['Montserrat',sans-serif]">
+    <section
+      id="exportacion"
+      className="relative w-full bg-[#050914] overflow-hidden py-20 font-['Montserrat',sans-serif]"
+    >
 
       {/* Fondo */}
       <div
@@ -68,9 +71,10 @@ export default function Exportacion() {
                   key={i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6 }}
                   viewport={{ amount: 0.2 }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative w-[155px] h-[165px] rounded-xl border border-[#1e293b]/70 bg-gradient-to-b from-[#0b1325]/90 to-[#070b18] shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  transition={{ duration: 0.18 }}
+                  className="relative w-[155px] h-[165px] rounded-xl border border-[#1e293b]/70 bg-gradient-to-b from-[#0b1325]/90 to-[#070b18] shadow-md hover:shadow-2xl transition-all duration-200 will-change-transform"
                 >
                   <div className="h-full w-full flex flex-col justify-between p-4">
 

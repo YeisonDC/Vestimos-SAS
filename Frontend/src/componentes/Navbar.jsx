@@ -9,6 +9,28 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToCotizar = () => {
+    const section = document.getElementById('cotizar');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const scrollToExportacion = () => {
+    const section = document.getElementById('exportacion');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 py-5 transition-all duration-150 ${
       scrolling
@@ -36,12 +58,22 @@ export default function Navbar() {
         <li className="hover:text-white transition cursor-pointer pb-2">NOSOTROS</li>
         <li className="hover:text-white transition cursor-pointer pb-2">PRODUCTOS</li>
         <li className="hover:text-white transition cursor-pointer pb-2">SERVICIOS</li>
-        <li className="hover:text-white transition cursor-pointer pb-2">COMERCIO EXTERIOR</li>
+
+        <li
+          onClick={scrollToExportacion}
+          className="hover:text-white transition cursor-pointer pb-2"
+        >
+          COMERCIO EXTERIOR
+        </li>
+
         <li className="hover:text-white transition cursor-pointer pb-2">CONTACTO</li>
       </ul>
 
       {/* Botón */}
-      <button className="border border-gray-600 hover:border-white px-6 py-2.5 rounded text-[11px] font-bold tracking-wider transition flex items-center gap-2">
+      <button
+        onClick={scrollToCotizar}
+        className="border border-gray-600 hover:border-white px-6 py-2.5 rounded text-[11px] font-bold tracking-wider transition flex items-center gap-2"
+      >
         COTIZAR AHORA
       </button>
     </nav>

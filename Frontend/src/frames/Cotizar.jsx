@@ -58,7 +58,7 @@ ${formData.mensaje}`;
   };
 
   return (
-    <section className="relative overflow-hidden py-24 bg-[#050816]">
+    <section id="cotizar" className="relative overflow-hidden py-24 bg-[#050816]">
 
       {/* Imagen de fondo */}
       <div
@@ -174,7 +174,8 @@ ${formData.mensaje}`;
                     required
                     value={formData.nombre}
                     onChange={handleChange}
-                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white"
+                    placeholder="Ej: Juan David López"
+                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
                   />
                 </div>
               </div>
@@ -194,7 +195,8 @@ ${formData.mensaje}`;
                     required
                     value={formData.empresa}
                     onChange={handleChange}
-                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white"
+                    placeholder="Ej: Industrias López S.A.S"
+                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
                   />
                 </div>
               </div>
@@ -210,7 +212,7 @@ ${formData.mensaje}`;
                     name="categoria"
                     value={formData.categoria}
                     onChange={handleChange}
-                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 px-4 text-white"
+                    className="appearance-none w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 px-4 pr-12 text-white"
                   >
                     {categorias.map((cat) => (
                       <option key={cat} value={cat}>
@@ -219,7 +221,7 @@ ${formData.mensaje}`;
                     ))}
                   </select>
 
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748b]" />
+                  <ChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#64748b]" />
                 </div>
               </div>
 
@@ -238,7 +240,8 @@ ${formData.mensaje}`;
                     rows="5"
                     value={formData.mensaje}
                     onChange={handleChange}
-                    className="w-full rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 py-4 text-white resize-none"
+                    placeholder="Ej: Necesito una cotización para exportar aluminio hacia Estados Unidos."
+                    className="w-full rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 py-4 text-white resize-none placeholder:text-[#64748b]"
                   />
                 </div>
               </div>
