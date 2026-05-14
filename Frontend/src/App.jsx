@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import Navbar from './componentes/Navbar';
 import Principal from './frames/principal';
@@ -13,29 +13,81 @@ import Ropa from "./componentes/Ropa";
 import Frutas from "./componentes/Frutas";
 
 export default function App() {
+  const [paginaActiva, setPaginaActiva] = useState("home");
+  const cotizarRef = useRef(null);
+
+  const cambiarPagina = (pagina) => {
+    setPaginaActiva(pagina);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const irACotizar = () => {
+    setPaginaActiva("home");
+
+    setTimeout(() => {
+      cotizarRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 150);
+  };
+
   return (
     <div className="min-h-screen bg-[#050914] text-white font-sans pt-[45px]">
 
-      {/* 1. NAVBAR */}
-      <Navbar />
+      <Navbar onInicioClick={() => cambiarPagina("home")} />
 
-      {/* 2. HERO */}
-      <Principal />
+      {paginaActiva === "home" && (
+        <>
+          <Principal />
 
-      {/* 3. TARJETAS */}
-      <TarjetasProductos />
+          <TarjetasProductos
+            onAleacionesClick={() => cambiarPagina("aleaciones")}
+            onRopaClick={() => cambiarPagina("ropa")}
+            onFrutasClick={() => cambiarPagina("frutas")}
+          />
 
-      {/* 4. SERVICIOS */}
-      <Servicios />
+          <Servicios />
+          <Exportacion />
 
-      {/* 5. EXPORTACIÓN */}
-      <Exportacion />
+          <div ref={cotizarRef}>
+            <Cotizar />
+          </div>
 
-      {/* 6. COTIZAR */}
-      <Cotizar />
+          <Banner_final
+            onAleacionesClick={() => cambiarPagina("aleaciones")}
+            onRopaClick={() => cambiarPagina("ropa")}
+            onFrutasClick={() => cambiarPagina("frutas")}
+          />
+        </>
+      )}
 
-      {/* 8. BANNER FINAL */}
-      <Banner_final />
+      {paginaActiva === "aleaciones" && (
+        <AluminioAleaciones
+          irACotizar={irACotizar}
+          onAleacionesClick={() => cambiarPagina("aleaciones")}
+          onRopaClick={() => cambiarPagina("ropa")}
+          onFrutasClick={() => cambiarPagina("frutas")}
+        />
+      )}
+
+      {paginaActiva === "ropa" && (
+        <Ropa
+          irACotizar={irACotizar}
+          onAleacionesClick={() => cambiarPagina("aleaciones")}
+          onRopaClick={() => cambiarPagina("ropa")}
+          onFrutasClick={() => cambiarPagina("frutas")}
+        />
+      )}
+
+      {paginaActiva === "frutas" && (
+        <Frutas
+          irACotizar={irACotizar}
+          onAleacionesClick={() => cambiarPagina("aleaciones")}
+          onRopaClick={() => cambiarPagina("ropa")}
+          onFrutasClick={() => cambiarPagina("frutas")}
+        />
+      )}
 
     </div>
   );
