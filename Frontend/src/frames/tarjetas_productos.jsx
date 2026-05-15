@@ -11,13 +11,15 @@ export default function TarjetasProductos({
     show: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.6 }
-    })
+      transition: { delay: i * 0.15, duration: 0.6 },
+    }),
   };
 
   return (
-    <section className="w-full max-w-[1900px] mx-auto px-6 md:px-12 py-10">
-
+    <section
+      id="productos"
+      className="w-full max-w-[1900px] mx-auto px-6 md:px-12 py-10 scroll-mt-28"
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 
         {/* CARD 1 */}
