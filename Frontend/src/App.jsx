@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 
 import Navbar from './componentes/Navbar';
+import BotonWhatsapp from './componentes/Boton';
+
 import Principal from './frames/principal';
 import TarjetasProductos from './frames/tarjetas_productos';
 import Servicios from './frames/servicios';
@@ -18,7 +20,11 @@ export default function App() {
 
   const cambiarPagina = (pagina) => {
     setPaginaActiva(pagina);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const irACotizar = () => {
@@ -37,6 +43,9 @@ export default function App() {
 
       <Navbar onInicioClick={() => cambiarPagina("home")} />
 
+      {/* BOTÓN WHATSAPP */}
+      <BotonWhatsapp />
+
       {paginaActiva === "home" && (
         <>
           <Principal />
@@ -48,6 +57,7 @@ export default function App() {
           />
 
           <Servicios />
+
           <Exportacion />
 
           <div ref={cotizarRef}>
