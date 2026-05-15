@@ -9,7 +9,10 @@ export default function Banner_final({
   onFrutasClick,
 }) {
   return (
-    <footer className="relative overflow-hidden border-t border-gray-800/50 bg-[#050914]">
+    <footer
+      id="contacto"
+      className="relative overflow-hidden border-t border-gray-800/50 bg-[#050914]"
+    >
       <div className="absolute inset-0 bg-[#050914]/40 backdrop-blur-sm" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -92,9 +95,17 @@ export default function Banner_final({
             </h3>
 
             <ul className="mt-5 space-y-3 text-sm text-gray-300">
-              <li className="hover:text-white cursor-pointer transition">Nosotros</li>
-              <li className="hover:text-white cursor-pointer transition">Procesos logísticos</li>
-              <li className="hover:text-white cursor-pointer transition">Cobertura internacional</li>
+              <li className="hover:text-white cursor-pointer transition">
+                Nosotros
+              </li>
+
+              <li className="hover:text-white cursor-pointer transition">
+                Procesos logísticos
+              </li>
+
+              <li className="hover:text-white cursor-pointer transition">
+                Cobertura internacional
+              </li>
             </ul>
           </motion.div>
 

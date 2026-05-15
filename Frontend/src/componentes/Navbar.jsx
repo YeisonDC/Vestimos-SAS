@@ -5,7 +5,9 @@ export default function Navbar({ onInicioClick }) {
 
   useEffect(() => {
     const handleScroll = () => setScrolling(window.scrollY > 5);
+
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,6 +24,29 @@ export default function Navbar({ onInicioClick }) {
 
   const scrollToExportacion = () => {
     const section = document.getElementById('exportacion');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const scrollToContacto = () => {
+    const section = document.getElementById('contacto');
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  // NUEVA FUNCIÓN PRODUCTOS
+  const scrollToProductos = () => {
+    const section = document.getElementById('productos');
 
     if (section) {
       section.scrollIntoView({
@@ -54,6 +79,7 @@ export default function Navbar({ onInicioClick }) {
           <h1 className="text-xl font-bold tracking-widest leading-none">
             VESTIMOS JB SAS
           </h1>
+
           <p className="text-[10px] text-blue-500 font-semibold tracking-widest mt-1">
             COMERCIALIZADORA INTERNACIONAL
           </p>
@@ -73,12 +99,12 @@ export default function Navbar({ onInicioClick }) {
           NOSOTROS
         </li>
 
-        <li className="hover:text-white transition cursor-pointer pb-2">
+        {/* PRODUCTOS */}
+        <li
+          onClick={scrollToProductos}
+          className="hover:text-white transition cursor-pointer pb-2"
+        >
           PRODUCTOS
-        </li>
-
-        <li className="hover:text-white transition cursor-pointer pb-2">
-          SERVICIOS
         </li>
 
         <li
@@ -88,7 +114,10 @@ export default function Navbar({ onInicioClick }) {
           COMERCIO EXTERIOR
         </li>
 
-        <li className="hover:text-white transition cursor-pointer pb-2">
+        <li
+          onClick={scrollToContacto}
+          className="hover:text-white transition cursor-pointer pb-2"
+        >
           CONTACTO
         </li>
       </ul>
