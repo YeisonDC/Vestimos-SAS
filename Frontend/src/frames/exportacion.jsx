@@ -149,11 +149,6 @@ export default function Exportacion() {
 
             </div>
 
-            <button className="mt-6 w-full border border-[#334155] hover:border-[#3b82f6] hover:bg-[#3b82f6]/10 transition-all duration-300 rounded-lg py-3 text-white uppercase tracking-[0.05em] text-[12px] font-semibold flex items-center justify-center gap-2">
-              Ver todos los países
-              
-            </button>
-
           </div>
         </motion.div>
 

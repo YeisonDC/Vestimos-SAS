@@ -15,7 +15,7 @@ const AluminioAleaciones = ({
         "Aleaciones utilizadas en procesos térmicos, soldadura y aplicaciones industriales especializadas.",
       aplicaciones: ["Soldadura", "Brazing", "Térmico"],
       badge: "Industrial",
-      imagen: "/media/Serie-4000.png",
+      imagen: "/media/serie-4000.png",
     },
     {
       serie: "Serie 6000",
@@ -24,7 +24,7 @@ const AluminioAleaciones = ({
         "Serie altamente versátil utilizada en construcción, perfiles y soluciones estructurales.",
       aplicaciones: ["Construcción", "Perfiles", "Transporte"],
       badge: "Versátil",
-      imagen: "/media/Serie-6000.png",
+      imagen: "/media/serie-6000.png",
     },
     {
       serie: "Serie 7000",
@@ -33,7 +33,7 @@ const AluminioAleaciones = ({
         "Aleaciones de alta resistencia utilizadas en aplicaciones industriales y estructurales exigentes.",
       aplicaciones: ["Alta resistencia", "Industrial", "Estructural"],
       badge: "Premium",
-      imagen: "/media/Serie-7000.png",
+      imagen: "/media/serie-7000.png",
     },
     {
       serie: "Serie 8000",
@@ -42,7 +42,7 @@ const AluminioAleaciones = ({
         "Aleaciones técnicas desarrolladas para aplicaciones específicas y procesos industriales avanzados.",
       aplicaciones: ["Industrial", "Especializado", "Técnico"],
       badge: "Especial",
-      imagen: "/media/Serie-8000.png",
+      imagen: "/media/serie-8000.png",
     },
   ];
 
@@ -112,7 +112,7 @@ const AluminioAleaciones = ({
 
             <div className="relative overflow-hidden rounded-3xl border border-blue-500/20 shadow-[0_0_50px_rgba(37,99,235,0.18)]">
               <img
-                src="/media/Serie-7000.png"
+                src="/media/serie-7000.png"
                 alt="Aluminio industrial"
                 className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:h-[480px] object-cover transition duration-700 group-hover:scale-105"
               />
