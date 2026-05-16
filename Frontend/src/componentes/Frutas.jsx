@@ -78,9 +78,10 @@ const Frutas = ({
             </h2>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
-              Nuestra línea agrícola está enfocada en la comercialización
-              y exportación de frutas frescas para diferentes mercados
-              nacionales e internacionales.
+              En VESTIMOS JB impulsamos la exportación de frutas con soluciones confiables, 
+              ágiles y adaptadas a las necesidades de cada cliente.
+              Conectamos la calidad y el talento de la industria agricola con mercados nacionales e internacionales, garantizando procesos eficientes, 
+              cumplimiento en cada entrega y altos estándares.
             </p>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">

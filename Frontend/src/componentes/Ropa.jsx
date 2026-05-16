@@ -28,7 +28,7 @@ const Ropa = ({
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Exportación de Ropa
+            Exportación Prendas de Vestir
           </h1>
 
           <p className="text-gray-400 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
@@ -78,9 +78,10 @@ const Ropa = ({
             </h2>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
-              Nuestra línea textil está enfocada en la comercialización
-              y exportación de prendas de vestir para diferentes mercados
-              nacionales e internacionales.
+              En VESTIMOS JB impulsamos la exportación de prendas de vestir con soluciones confiables, 
+              ágiles y adaptadas a las necesidades de cada cliente. 
+              Conectamos la calidad y el talento de la industria textil con mercados nacionales e internacionales, 
+              garantizando procesos eficientes, cumplimiento en cada entrega y altos estándares en cada prenda.
             </p>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
