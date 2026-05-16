@@ -6,6 +6,7 @@ import BotonWhatsapp from './componentes/Boton';
 import Principal from './frames/principal';
 import TarjetasProductos from './frames/tarjetas_productos';
 import Servicios from './frames/servicios';
+import Nosotros from './frames/Nosotros';
 import Exportacion from './frames/exportacion';
 import Cotizar from './frames/Cotizar';
 import Banner_final from './componentes/Banner_final';
@@ -57,6 +58,9 @@ export default function App() {
           />
 
           <Servicios />
+
+          {/* 🔥 NUEVA SECCIÓN */}
+          <Nosotros />
 
           <Exportacion />
 

@@ -18,7 +18,7 @@ export default function Cotizar() {
   });
 
   const numerosWhatsapp = {
-    "Exportar Aluminio": "573000000001",
+    "Exportar Aluminio": "573232909259",
     "Exportar Fruta": "573000000002",
     "Exportar Prendas de Vestir": "573000000003",
     Importar: "573000000004",
@@ -29,11 +29,7 @@ export default function Cotizar() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -50,30 +46,29 @@ Servicio: ${formData.categoria}
 Detalles:
 ${formData.mensaje}`;
 
-    const mensajeCodificado = encodeURIComponent(mensajeTexto);
-
-    const urlWhatsapp = `https://wa.me/${numeroDestino}?text=${mensajeCodificado}`;
+    const urlWhatsapp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(
+      mensajeTexto
+    )}`;
 
     window.open(urlWhatsapp, "_blank");
   };
 
   return (
-    <section id="cotizar" className="relative overflow-hidden py-24 bg-[#050816]">
-
-      {/* Imagen de fondo */}
+    <section
+      id="cotizar"
+      className="relative overflow-hidden py-24 max-md:py-16 bg-[#050816]"
+    >
+      {/* BACKGROUND */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
-        style={{
-          backgroundImage: "url('/media/cotizar.png')",
-        }}
+        style={{ backgroundImage: "url('/media/cotizar.png')" }}
       />
-
       <div className="absolute inset-0 backdrop-blur-[2px]" />
       <div className="absolute inset-0 bg-[#050816]/88" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#3b82f6]/10 blur-[140px]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.10),transparent_55%)]" />
 
-      {/* Contenido */}
+      {/* CONTENIDO */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         <motion.div
@@ -81,33 +76,43 @@ ${formData.mensaje}`;
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.2 }}
           transition={{ duration: 0.8 }}
-          className="grid lg:grid-cols-2 rounded-[32px] overflow-hidden border border-white/10 bg-[#0b1220]/75 backdrop-blur-xl shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
+          className="
+            grid lg:grid-cols-2
+            rounded-[32px]
+            overflow-hidden
+            border border-white/10
+            bg-[#0b1220]/75
+            backdrop-blur-xl
+            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+
+            max-md:grid-cols-1
+            max-md:rounded-2xl
+          "
         >
 
-          {/* Left Side */}
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.2 }}
             transition={{ duration: 0.7 }}
-            className="relative p-10 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/10"
+            className="
+              relative p-10 lg:p-14
+              max-md:p-6
+              border-b lg:border-b-0 lg:border-r border-white/10
+            "
           >
 
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#3b82f6]/20 bg-[#3b82f6]/10 text-[#93c5fd] text-xs tracking-[0.18em] uppercase font-semibold">
-              Comercio Internacional
-            </div>
-
-            <h2 className="mt-8 text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-white">
+            <h2 className="mt-8 text-4xl lg:text-5xl max-md:text-3xl font-semibold leading-tight tracking-tight text-white">
               Solicita una cotización profesional
             </h2>
 
-            <p className="mt-6 text-[#94a3b8] leading-relaxed text-[15px] max-w-xl">
+            <p className="mt-6 text-[#94a3b8] leading-relaxed text-[15px] max-md:text-sm max-w-xl">
               Nuestro equipo especializado en importaciones y exportaciones
-              responderá tu solicitud de forma rápida y personalizada vía
-              WhatsApp.
+              responderá tu solicitud de forma rápida y personalizada vía WhatsApp.
             </p>
 
-            {/* Features */}
+            {/* FEATURES (NO TOCADO) */}
             <div className="mt-12 space-y-5">
 
               {[
@@ -123,43 +128,42 @@ ${formData.mensaje}`;
                   transition={{ delay: i * 0.15, duration: 0.5 }}
                   className="flex items-start gap-4"
                 >
-                  <div className="mt-0.5 w-11 h-11 rounded-2xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center shrink-0">
+                  <div className="mt-0.5 w-11 h-11 max-md:w-10 max-md:h-10 rounded-2xl bg-[#3b82f6]/10 border border-[#3b82f6]/20 flex items-center justify-center shrink-0">
                     <ShieldCheck className="w-5 h-5 text-[#60a5fa]" />
                   </div>
 
                   <div>
-                    <h3 className="text-white font-medium">
+                    <h3 className="text-white font-medium max-md:text-sm">
                       {title}
                     </h3>
 
-                    <p className="mt-1 text-sm text-[#94a3b8] leading-relaxed">
+                    <p className="mt-1 text-sm max-md:text-xs text-[#94a3b8] leading-relaxed">
                       Asesoría profesional para operaciones internacionales.
                     </p>
                   </div>
                 </motion.div>
               ))}
-
             </div>
 
             <div className="mt-16 pt-6 border-t border-white/10">
-              <p className="text-sm text-[#64748b]">
+              <p className="text-sm max-md:text-xs text-[#64748b]">
                 Importaciones • Exportaciones • Comercio Exterior
               </p>
             </div>
           </motion.div>
 
-          {/* Right Side */}
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.2 }}
             transition={{ duration: 0.7 }}
-            className="p-10 lg:p-14"
+            className="p-10 lg:p-14 max-md:p-6"
           >
 
             <form onSubmit={handleSubmit} className="space-y-6">
 
-              {/* Nombre */}
+              {/* NOMBRE */}
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   Nombre completo
@@ -175,12 +179,12 @@ ${formData.mensaje}`;
                     value={formData.nombre}
                     onChange={handleChange}
                     placeholder="Ej: Juan David López"
-                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
+                    className="w-full h-14 max-md:h-12 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
                   />
                 </div>
               </div>
 
-              {/* Empresa */}
+              {/* EMPRESA */}
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   Empresa
@@ -196,12 +200,12 @@ ${formData.mensaje}`;
                     value={formData.empresa}
                     onChange={handleChange}
                     placeholder="Ej: Industrias López S.A.S"
-                    className="w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
+                    className="w-full h-14 max-md:h-12 rounded-2xl bg-[#111827]/90 border border-white/10 pl-12 pr-4 text-white placeholder:text-[#64748b]"
                   />
                 </div>
               </div>
 
-              {/* Categoría */}
+              {/* CATEGORÍA */}
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   Servicio requerido
@@ -212,7 +216,7 @@ ${formData.mensaje}`;
                     name="categoria"
                     value={formData.categoria}
                     onChange={handleChange}
-                    className="appearance-none w-full h-14 rounded-2xl bg-[#111827]/90 border border-white/10 px-4 pr-12 text-white"
+                    className="appearance-none w-full h-14 max-md:h-12 rounded-2xl bg-[#111827]/90 border border-white/10 px-4 pr-12 text-white"
                   >
                     {categorias.map((cat) => (
                       <option key={cat} value={cat}>
@@ -225,7 +229,7 @@ ${formData.mensaje}`;
                 </div>
               </div>
 
-              {/* Mensaje */}
+              {/* MENSAJE (SIN CAMBIOS) */}
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   Detalles de la solicitud
@@ -246,10 +250,10 @@ ${formData.mensaje}`;
                 </div>
               </div>
 
-              {/* Botón */}
+              {/* BOTÓN */}
               <button
                 type="submit"
-                className="group w-full h-14 rounded-2xl bg-[#3b82f6] text-white flex items-center justify-center gap-3"
+                className="group w-full h-14 max-md:h-12 rounded-2xl bg-[#3b82f6] text-white flex items-center justify-center gap-3"
               >
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition" />
                 Solicitar cotización
