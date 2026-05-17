@@ -1,108 +1,145 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
-import Navbar from './componentes/Navbar';
-import BotonWhatsapp from './componentes/Boton';
+import Navbar from "./componentes/Navbar";
+import BotonWhatsapp from "./componentes/Boton";
 
-import Principal from './frames/principal';
-import TarjetasProductos from './frames/tarjetas_productos';
-import Servicios from './frames/servicios';
-import Nosotros from './frames/Nosotros';
-import Exportacion from './frames/exportacion';
-import Cotizar from './frames/Cotizar';
-import Banner_final from './componentes/Banner_final';
+import Principal from "./frames/principal";
+import TarjetasProductos from "./frames/tarjetas_productos";
+import Servicios from "./frames/servicios";
+import Nosotros from "./frames/Nosotros";
+import Exportacion from "./frames/exportacion";
+import Cotizar from "./frames/Cotizar";
+import Banner_final from "./componentes/Banner_final";
 
 import AluminioAleaciones from "./componentes/Aleaciones";
 import Ropa from "./componentes/Ropa";
 import Frutas from "./componentes/Frutas";
 
-export default function App() {
-  const [paginaActiva, setPaginaActiva] = useState("home");
+function Home() {
+  const navigate = useNavigate();
   const cotizarRef = useRef(null);
 
-  const cambiarPagina = (pagina) => {
-    setPaginaActiva(pagina);
-
-    window.scrollTo({
-      top: 0,
+  const irACotizar = () => {
+    cotizarRef.current?.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   };
 
+  return (
+    <>
+      <Principal />
+
+      <section id="productos" className="scroll-mt-28">
+        <TarjetasProductos
+          onAleacionesClick={() => navigate("/aleaciones")}
+          onRopaClick={() => navigate("/ropa")}
+          onFrutasClick={() => navigate("/frutas")}
+        />
+      </section>
+
+      <Servicios />
+
+      <section id="nosotros" className="scroll-mt-28">
+        <Nosotros />
+      </section>
+
+      <section id="exportacion" className="scroll-mt-28">
+        <Exportacion />
+      </section>
+
+      <section
+        id="cotizar"
+        ref={cotizarRef}
+        className="scroll-mt-28"
+      >
+        <Cotizar />
+      </section>
+
+      <section id="contacto" className="scroll-mt-28">
+        <Banner_final
+          onAleacionesClick={() => navigate("/aleaciones")}
+          onRopaClick={() => navigate("/ropa")}
+          onFrutasClick={() => navigate("/frutas")}
+        />
+      </section>
+    </>
+  );
+}
+
+function AppRoutes() {
+  const navigate = useNavigate();
+
   const irACotizar = () => {
-    setPaginaActiva("home");
+    navigate("/");
 
     setTimeout(() => {
-      cotizarRef.current?.scrollIntoView({
+      document.getElementById("cotizar")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-    }, 150);
+    }, 200);
   };
 
   return (
-    <div className="min-h-screen bg-[#050914] text-white font-sans pt-[45px]">
+    <Routes>
+      <Route path="/" element={<Home />} />
 
-      <Navbar onInicioClick={() => cambiarPagina("home")} />
-
-      {/* BOTÓN WHATSAPP */}
-      <BotonWhatsapp />
-
-      {paginaActiva === "home" && (
-        <>
-          <Principal />
-
-          <TarjetasProductos
-            onAleacionesClick={() => cambiarPagina("aleaciones")}
-            onRopaClick={() => cambiarPagina("ropa")}
-            onFrutasClick={() => cambiarPagina("frutas")}
+      <Route
+        path="/aleaciones"
+        element={
+          <AluminioAleaciones
+            irACotizar={irACotizar}
+            onAleacionesClick={() => navigate("/aleaciones")}
+            onRopaClick={() => navigate("/ropa")}
+            onFrutasClick={() => navigate("/frutas")}
           />
+        }
+      />
 
-          <Servicios />
-
-          {/* 🔥 NUEVA SECCIÓN */}
-          <Nosotros />
-
-          <Exportacion />
-
-          <div ref={cotizarRef}>
-            <Cotizar />
-          </div>
-
-          <Banner_final
-            onAleacionesClick={() => cambiarPagina("aleaciones")}
-            onRopaClick={() => cambiarPagina("ropa")}
-            onFrutasClick={() => cambiarPagina("frutas")}
+      <Route
+        path="/ropa"
+        element={
+          <Ropa
+            irACotizar={irACotizar}
+            onAleacionesClick={() => navigate("/aleaciones")}
+            onRopaClick={() => navigate("/ropa")}
+            onFrutasClick={() => navigate("/frutas")}
           />
-        </>
-      )}
+        }
+      />
 
-      {paginaActiva === "aleaciones" && (
-        <AluminioAleaciones
-          irACotizar={irACotizar}
-          onAleacionesClick={() => cambiarPagina("aleaciones")}
-          onRopaClick={() => cambiarPagina("ropa")}
-          onFrutasClick={() => cambiarPagina("frutas")}
-        />
-      )}
+      <Route
+        path="/frutas"
+        element={
+          <Frutas
+            irACotizar={irACotizar}
+            onAleacionesClick={() => navigate("/aleaciones")}
+            onRopaClick={() => navigate("/ropa")}
+            onFrutasClick={() => navigate("/frutas")}
+          />
+        }
+      />
+    </Routes>
+  );
+}
 
-      {paginaActiva === "ropa" && (
-        <Ropa
-          irACotizar={irACotizar}
-          onAleacionesClick={() => cambiarPagina("aleaciones")}
-          onRopaClick={() => cambiarPagina("ropa")}
-          onFrutasClick={() => cambiarPagina("frutas")}
-        />
-      )}
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#050914] text-white font-sans pt-[45px]">
+        <Navbar />
 
-      {paginaActiva === "frutas" && (
-        <Frutas
-          irACotizar={irACotizar}
-          onAleacionesClick={() => cambiarPagina("aleaciones")}
-          onRopaClick={() => cambiarPagina("ropa")}
-          onFrutasClick={() => cambiarPagina("frutas")}
-        />
-      )}
+        <BotonWhatsapp />
 
-    </div>
+        <AppRoutes />
+      </div>
+    </BrowserRouter>
   );
 }

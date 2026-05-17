@@ -2,22 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { useLocation, useNavigate } from "react-router-dom";
 
-export default function Banner_final({
-  onAleacionesClick,
-  onRopaClick,
-  onFrutasClick,
-}) {
+export default function Banner_final() {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
+  const irASeccion = (id) => {
+    // Si NO estamos en home
+    if (location.pathname !== "/") {
+      navigate("/");
 
-    if (section) {
-      section.scrollIntoView({
+      setTimeout(() => {
+        const section = document.getElementById(id);
+
+        section?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 200);
+    } else {
+      // Si ya estamos en home
+      const section = document.getElementById(id);
+
+      section?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
+  };
+
+  // NUEVO: navegar y subir arriba
+  const irARuta = (ruta) => {
+    navigate(ruta);
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
   };
 
   return (
@@ -30,13 +54,15 @@ export default function Banner_final({
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* GRID PRINCIPAL */}
-        <div className="
-          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16
+        <div
+          className="
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16
 
-          max-md:grid-cols-1
-          max-md:gap-10
-          max-md:py-10
-        ">
+            max-md:grid-cols-1
+            max-md:gap-10
+            max-md:py-10
+          "
+        >
 
           {/* COL 1 */}
           <motion.div
@@ -51,7 +77,8 @@ export default function Banner_final({
             </h2>
 
             <p className="mt-5 text-sm text-gray-300 leading-relaxed max-md:text-[13px]">
-              Especialistas en comercio internacional, exportaciones, importaciones y soluciones logísticas.
+              Especialistas en comercio internacional, exportaciones,
+              importaciones y soluciones logísticas.
             </p>
 
             <div className="flex items-center gap-3 mt-6 max-md:justify-center">
@@ -80,20 +107,29 @@ export default function Banner_final({
             </h3>
 
             <ul className="mt-5 space-y-3 text-sm text-gray-300">
-              <li onClick={onAleacionesClick} className="hover:text-blue-400 cursor-pointer transition">
+              <li
+                onClick={() => irARuta("/aleaciones")}
+                className="hover:text-blue-400 cursor-pointer transition"
+              >
                 Exportación de aluminio
               </li>
 
-              <li onClick={onFrutasClick} className="hover:text-blue-400 cursor-pointer transition">
+              <li
+                onClick={() => irARuta("/frutas")}
+                className="hover:text-blue-400 cursor-pointer transition"
+              >
                 Exportación de frutas
               </li>
 
-              <li onClick={onRopaClick} className="hover:text-blue-400 cursor-pointer transition">
+              <li
+                onClick={() => irARuta("/ropa")}
+                className="hover:text-blue-400 cursor-pointer transition"
+              >
                 Exportación textil
               </li>
 
               <li
-                onClick={() => scrollToSection("cotizar")}
+                onClick={() => irASeccion("cotizar")}
                 className="hover:text-blue-400 cursor-pointer transition"
               >
                 Importaciones
@@ -115,7 +151,7 @@ export default function Banner_final({
 
             <ul className="mt-5 space-y-3 text-sm text-gray-300">
               <li
-                onClick={() => scrollToSection("nosotros")}
+                onClick={() => irASeccion("nosotros")}
                 className="hover:text-white cursor-pointer transition"
               >
                 Nosotros
@@ -143,7 +179,7 @@ export default function Banner_final({
 
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-blue-500" />
-                +57 300 000 0000
+                +57 316 8745223
               </div>
 
               <div className="flex items-center gap-2">
@@ -177,7 +213,7 @@ export default function Banner_final({
           </p>
         </motion.div>
 
-        {/* POWERED BY (LINK A INSTAGRAM) */}
+        {/* POWERED BY */}
         <div className="text-center text-xs text-gray-500 mt-6 pb-4">
           Powered by{" "}
           <a

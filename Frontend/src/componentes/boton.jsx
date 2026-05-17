@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function BotonWhatsapp() {
-  const numero = "573000000000"; // Cambia por tu número
+  const numero = "573168745223";
 
   const mensaje = encodeURIComponent(
     "Hola, quiero más información sobre sus servicios."

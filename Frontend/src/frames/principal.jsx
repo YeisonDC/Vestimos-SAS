@@ -129,7 +129,7 @@ export default function Principal() {
             { icon: <Globe />, title: '5+', text: 'Países en nuestra\nred comercial' },
 
             // 🔥 TONELADAS EXPORTADAS
-            { icon: <Handshake />, title: '1200+', text: 'Toneladas exportadas' },
+            { icon: <Handshake />, title: '120+', text: 'Toneladas exportadas' },
 
             // 🔥 CANTIDAD DE ALEACIONES
             { icon: <Package />, title: '4', text: 'Tipos de aleaciones\ncomercializadas' },
