@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   useNavigate,
@@ -132,7 +132,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="min-h-screen bg-[#050914] text-white font-sans pt-[45px]">
         <Navbar />
 
@@ -140,6 +140,6 @@ export default function App() {
 
         <AppRoutes />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
