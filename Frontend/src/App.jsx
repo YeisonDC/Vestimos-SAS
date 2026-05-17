@@ -5,26 +5,21 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
-
 import Navbar from "./componentes/Navbar";
-import BotonWhatsapp from "./componentes/Boton";
-
+import BotonWhatsapp from "./componentes/boton";
 import Principal from "./frames/principal";
 import TarjetasProductos from "./frames/tarjetas_productos";
 import Servicios from "./frames/servicios";
-import Nosotros from "./frames/Nosotros";
+import Nosotros from "./frames/nosotros";
 import Exportacion from "./frames/exportacion";
 import Cotizar from "./frames/Cotizar";
 import Banner_final from "./componentes/Banner_final";
-
 import AluminioAleaciones from "./componentes/Aleaciones";
 import Ropa from "./componentes/Ropa";
 import Frutas from "./componentes/Frutas";
-
 function Home() {
   const navigate = useNavigate();
   const cotizarRef = useRef(null);
-
   const irACotizar = () => {
     cotizarRef.current?.scrollIntoView({
       behavior: "smooth",
