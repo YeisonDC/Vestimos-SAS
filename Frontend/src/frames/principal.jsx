@@ -38,6 +38,7 @@ export default function Principal() {
         className="relative w-full h-[490px] max-md:h-[700px] flex items-center bg-[#050914] overflow-hidden"
       >
 
+        {/* IMAGEN DESKTOP / MOBILE */}
         <div
           className="
             absolute right-0 top-0 h-full
@@ -45,13 +46,18 @@ export default function Principal() {
             max-md:w-full
             z-0
             bg-no-repeat
-            bg-center
             bg-cover
-            max-md:bg-contain
-            max-md:bg-[center_top]
-            max-md:scale-[0.82]
+            bg-center
           "
-          style={{ backgroundImage: "url('/media/exportacion2.png')" }}
+          style={{
+            backgroundImage: `
+              url(${
+                typeof window !== 'undefined' && window.innerWidth <= 768
+                  ? '/media/exportacion1.png'
+                  : '/media/exportacion2.png'
+              })
+            `
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#050914] via-[#050914]/40 max-md:via-[#050914]/80 to-transparent"></div>
 
@@ -79,10 +85,10 @@ export default function Principal() {
                   text-5xl
                   lg:text-[45px]
                   tracking-tight
-
-                  max-md:text-[clamp(1.7rem,8vw,2.4rem)]
-                  max-md:leading-tight
                   block
+
+                  max-md:text-[clamp(1.5rem,7vw,2.2rem)]
+                  max-md:leading-tight
                 "
               >
                 CONECTAMOS EMPRESAS
@@ -100,11 +106,11 @@ export default function Principal() {
                   from-gray-200
                   via-gray-400
                   to-gray-600
-
-                  max-md:text-[clamp(1.2rem,6vw,1.9rem)]
-                  max-md:leading-snug
                   block
                   mt-1
+
+                  max-md:text-[clamp(1rem,5vw,1.5rem)]
+                  max-md:leading-snug
                 "
               >
                 Y VENDEMOS PRODUCTOS
@@ -171,13 +177,9 @@ export default function Principal() {
 
           {[
             { icon: <Globe />, title: '5+', text: 'Países en nuestra\nred comercial' },
-
             { icon: <Handshake />, title: '120+', text: 'Toneladas exportadas' },
-
             { icon: <Package />, title: '4', text: 'Tipos de aleaciones\ncomercializadas' },
-
             { icon: <ShieldCheck />, title: '15+', text: 'Años de experiencia\nen el mercado' },
-
             { icon: <Users />, title: 'Red global', text: 'Equipo y aliados\ninternacionales activos' }
           ].map((item, index) => (
             <motion.div
