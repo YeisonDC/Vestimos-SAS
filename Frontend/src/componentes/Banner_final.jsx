@@ -179,7 +179,7 @@ export default function Banner_final() {
 
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-blue-500" />
-                +57 316 8745223
+                +57 315 3042755
               </div>
 
               <div className="flex items-center gap-2">

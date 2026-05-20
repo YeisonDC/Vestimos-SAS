@@ -21,7 +21,7 @@ const AluminioAleaciones = ({
       serie: "Serie 6000",
       composicion: "Aluminio + Magnesio + Silicio",
       descripcion:
-        "Serie altamente versátil utilizada en construcción, perfiles y soluciones estructurales.",
+        "Serie altamente versátil utilizada en construcción, perfiles y soluciones.",
       aplicaciones: ["Construcción", "Perfiles", "Transporte"],
       badge: "Versátil",
       imagen: "/media/serie-6000.png",
@@ -30,8 +30,8 @@ const AluminioAleaciones = ({
       serie: "Serie 7000",
       composicion: "Aluminio + Zinc",
       descripcion:
-        "Aleaciones de alta resistencia utilizadas en aplicaciones industriales y estructurales exigentes.",
-      aplicaciones: ["Alta resistencia", "Industrial", "Estructural"],
+        "Aleaciones de alta resistencia utilizadas en aplicaciones industriales y exigentes.",
+      aplicaciones: ["Alta resistencia", "Industrial"],
       badge: "Premium",
       imagen: "/media/serie-7000.png",
     },
@@ -98,7 +98,7 @@ const AluminioAleaciones = ({
 
           <p className="text-gray-400 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
             Comercializamos aluminio y aleaciones industriales para sectores
-            manufactureros, estructurales y de comercio internacional.
+            manufactureros y de comercio internacional.
           </p>
         </motion.div>
 
@@ -132,12 +132,12 @@ const AluminioAleaciones = ({
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
               El aluminio es uno de los materiales más utilizados en la industria
-              moderna gracias a su resistencia, ligereza y versatilidad.
+               gracias a su resistencia, ligereza y versatilidad.
             </p>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
               Trabajamos con aleaciones de las series 4000, 6000, 7000 y 8000,
-              utilizadas en sectores estructurales, manufactureros, logísticos e
+              utilizadas en sectores manufactureros, logísticos e
               industriales.
             </p>
 
@@ -150,9 +150,9 @@ const AluminioAleaciones = ({
             >
               {[
                 ["Alta resistencia", "Excelente desempeño para aplicaciones industriales."],
-                ["Ligero y eficiente", "Reduce peso estructural manteniendo rendimiento."],
+                ["Ligero y eficiente", "Reduce peso manteniendo rendimiento."],
                 ["Uso internacional", "Material ampliamente utilizado en mercados globales."],
-                ["Versatilidad", "Aplicaciones industriales, técnicas y estructurales."],
+                ["Versatilidad", "Aplicaciones industriales, técnicas."],
               ].map(([title, text], index) => (
                 <motion.div
                   key={index}
@@ -191,7 +191,7 @@ const AluminioAleaciones = ({
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {[
-              ["Construcción", "Estructuras, fachadas y soluciones arquitectónicas."],
+              ["Construcción", "fachadas y soluciones arquitectónicas."],
               ["Manufactura", "Piezas industriales, maquinaria y producción técnica."],
               ["Transporte", "Componentes ligeros para sistemas de movilidad."],
               ["Comercio Exterior", "Distribución y comercialización internacional."],

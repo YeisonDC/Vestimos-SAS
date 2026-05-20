@@ -18,11 +18,11 @@ export default function Cotizar() {
   });
 
   const numerosWhatsapp = {
-    "Exportar Aluminio": "573168745223",
-    "Exportar Fruta": "573168745223",
-    "Exportar Prendas de Vestir": "573168745223",
-    Importar: "573168745223",
-    "Asesoría en comercio exterior": "573168745223",
+    "Exportar Aluminio": "573153042755",
+    "Exportar Fruta": "573153042755",
+    "Exportar Prendas de Vestir": "573153042755",
+    Importar: "573153042755",
+    "Asesoría en comercio exterior": "573153042755",
   };
 
   const categorias = Object.keys(numerosWhatsapp);
