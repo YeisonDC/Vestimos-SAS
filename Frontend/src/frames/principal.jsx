@@ -39,10 +39,22 @@ export default function Principal() {
       >
 
         <div
-          className="absolute right-0 top-0 h-full w-[60%] max-md:w-full z-0 bg-cover bg-center"
+          className="
+            absolute right-0 top-0 h-full
+            w-[60%]
+            max-md:w-full
+            z-0
+            bg-no-repeat
+            bg-center
+            bg-cover
+            max-md:bg-contain
+            max-md:bg-[center_top]
+            max-md:scale-[0.82]
+          "
           style={{ backgroundImage: "url('/media/exportacion2.png')" }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#050914] via-[#050914]/40 max-md:via-[#050914]/80 to-transparent"></div>
+
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050914] to-transparent"></div>
         </div>
 
@@ -58,16 +70,48 @@ export default function Principal() {
               Comercializadora Internacional
             </p>
 
-            <h2 className="leading-[1.1] mb-3">
-              <span className="whitespace-nowrap text-gray-100 font-semibold text-5xl max-md:text-[34px] lg:text-[45px] tracking-tight">
+            <h2 className="leading-[1.05] mb-3 max-md:pr-2">
+
+              <span
+                className="
+                  text-gray-100
+                  font-semibold
+                  text-5xl
+                  lg:text-[45px]
+                  tracking-tight
+
+                  max-md:text-[clamp(1.7rem,8vw,2.4rem)]
+                  max-md:leading-tight
+                  block
+                "
+              >
                 CONECTAMOS EMPRESAS
               </span>
 
-              <br />
+              <span
+                className="
+                  font-medium
+                  text-[40px]
+                  lg:text-[39px]
+                  tracking-tight
+                  text-transparent
+                  bg-clip-text
+                  bg-gradient-to-b
+                  from-gray-200
+                  via-gray-400
+                  to-gray-600
 
-              <span className="font-medium text-[40px] max-md:text-[28px] lg:text-[39px] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-gray-200 via-gray-400 to-gray-600">
-                Y VENDEMOS PRODUCTOS<br />DE LA MEJOR CALIDAD
+                  max-md:text-[clamp(1.2rem,6vw,1.9rem)]
+                  max-md:leading-snug
+                  block
+                  mt-1
+                "
+              >
+                Y VENDEMOS PRODUCTOS
+                <br />
+                DE LA MEJOR CALIDAD
               </span>
+
             </h2>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-md pr-10 max-md:pr-0 font-medium">
@@ -128,10 +172,8 @@ export default function Principal() {
           {[
             { icon: <Globe />, title: '5+', text: 'Países en nuestra\nred comercial' },
 
-            // 🔥 TONELADAS EXPORTADAS
             { icon: <Handshake />, title: '120+', text: 'Toneladas exportadas' },
 
-            // 🔥 CANTIDAD DE ALEACIONES
             { icon: <Package />, title: '4', text: 'Tipos de aleaciones\ncomercializadas' },
 
             { icon: <ShieldCheck />, title: '15+', text: 'Años de experiencia\nen el mercado' },
