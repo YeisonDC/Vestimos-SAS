@@ -38,7 +38,7 @@ export default function Principal() {
         className="relative w-full h-[490px] max-md:h-[700px] flex items-center bg-[#050914] overflow-hidden"
       >
 
-        {/* IMAGEN DESKTOP / MOBILE */}
+        {/* IMAGEN HERO */}
         <div
           className="
             absolute right-0 top-0 h-full
@@ -50,18 +50,30 @@ export default function Principal() {
             bg-center
           "
           style={{
-            backgroundImage: `
-              url(${
-                typeof window !== 'undefined' && window.innerWidth <= 768
-                  ? '/media/exportacion1.png'
-                  : '/media/exportacion2.png'
-              })
-            `
+            backgroundImage: "url('/media/exportacion2.png')"
           }}
         >
+
+          {/* IMAGEN SOLO PARA MÓVIL */}
+          <div
+            className="
+              hidden
+              max-md:block
+              absolute
+              inset-0
+              bg-no-repeat
+              bg-cover
+              bg-center
+            "
+            style={{
+              backgroundImage: "url('/media/exportacion1.png')"
+            }}
+          />
+
           <div className="absolute inset-0 bg-gradient-to-r from-[#050914] via-[#050914]/40 max-md:via-[#050914]/80 to-transparent"></div>
 
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050914] to-transparent"></div>
+
         </div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5">
