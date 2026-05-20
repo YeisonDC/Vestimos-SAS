@@ -66,7 +66,7 @@ export default function Principal() {
               bg-center
             "
             style={{
-              backgroundImage: "url('/media/exportacion1.png')"
+              backgroundImage: "url('/media/exportacion3.png')"
             }}
           />
 
